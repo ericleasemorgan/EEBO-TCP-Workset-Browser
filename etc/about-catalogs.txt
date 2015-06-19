@@ -1,0 +1,29 @@
+From: Sebastian Rahtz <sebastian.rahtz@it.ox.ac.uk>
+Subject: Re: eebo [developments]
+Date: June 7, 2015 at 2:15:41 PM EDT
+To: Eric Lease Morgan <emorgan@ND.EDU>
+Cc: "TEI-L@LISTSERV.BROWN.EDU" <TEI-L@LISTSERV.BROWN.EDU>
+
+I don’t want to stop you having fun, Eric, but some of this is already
+done for you. From:
+
+  https://github.com/textcreationpartnership/Texts
+
+you can download CSV and JSON versions of the whole metadata catalogue, and:
+
+  http://ota.ox.ac.uk/tcp/
+ 
+has a browsable sortable HTML table with all that data. Perhaps not all
+the data categories you want. The ability of jQuery datatables to cope
+with 60000 rows of data is rather awesome.
+
+and of course HTML for all the texts is available from http://ota.ox.ac.uk/tcp/ too.
+
+I did try putting up an eXist database with all the texts for searching,
+but couldn’t justify maintaining it to myself. Wolfgang Meier did a
+better job of this, but there isn’t enough space in the margin to
+remember the URL for that.
+
+the more text analysis the better, natch :-}
+
+

@@ -1,0 +1,143 @@
+<html>
+<!-- generated from template-search-results.txt -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+<title>
+##TITLE## search results
+</title>
+<link rel="stylesheet" type="text/css" href="../etc/javascript/jquery.dataTables.css" /> 
+<script type="text/javascript" language="javascript" src="../etc/javascript/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" language="javascript" src="../etc/javascript/jquery.dataTables.min.js"></script> 
+<style>
+th, td { white-space: nowrap; }
+</style>
+<script type="text/javascript" charset="utf-8">
+
+/* Formatting function for row details - modify as you need */
+function format ( d ) {
+
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        '<tr>'+
+            '<td><strong>Full title</strong></td>'+
+            '<td>'+d.title+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Language</strong></td>'+
+            '<td>'+d.language+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Publisher</strong></td>'+
+            '<td>'+d.publisher+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Subject(s)</strong></td>'+
+            '<td>'+d.subjects+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Pagination</strong></td>'+
+            '<td>'+d.pagination+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Links</strong></td>'+
+            '<td><a href="' + d.tei + '">TEI</a> : <a href="' + d.html + '">HTML</a> : <a href="' + d.text + '">plain text</a></td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td><strong>Identifier</strong></td>'+
+            '<td>'+d.id+'</td>'+
+        '</tr>'+
+    '</table>';
+}
+ 
+$(document).ready(function() {
+    var table = $('#catalog').DataTable( {
+        "data": [##DATA##],
+        "searching": false,
+        "pageLength": 20,
+        "columns": [
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": ''
+            },
+            { "data": "author" },
+            { "data": "shortTitle" },
+            { "data": "date" },
+            { "data": "pages" },
+            { "data": "words" },
+            { "data": "colors" },
+            { "data": "names" },
+            { "data": "ideas" },
+            { "data": "count" },
+            { "data": "tfidf" }
+        ],
+        "order": [[10, 'desc']]
+    } );
+     
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+    
+    // Add event listener for opening and closing details
+    $('#catalog tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+ 
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
+} );
+</script> 
+</head>
+<body>
+<h1>
+##TITLE## search results
+</h1>
+<div>
+Toggle columns: &nbsp; 
+<a class="toggle-vis" data-column="1">Authors</a> &nbsp; 
+<a class="toggle-vis" data-column="2">Titles</a> &nbsp; 
+<a class="toggle-vis" data-column="3">Dates</a> &nbsp; 
+<a class="toggle-vis" data-column="4">Pages</a> &nbsp; 
+<a class="toggle-vis" data-column="5">Words</a> &nbsp; 
+<a class="toggle-vis" data-column="6">Colors</a> &nbsp; 
+<a class="toggle-vis" data-column="7">Names</a> &nbsp; 
+<a class="toggle-vis" data-column="8">Ideas</a> &nbsp; 
+<a class="toggle-vis" data-column="9">Count</a> &nbsp; 
+<a class="toggle-vis" data-column="10">TFIDF</a>
+				</div>
+				<div id="dataTables_wrapper">
+<table id="catalog" class="display compact" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Authors</th>
+                <th>Titles</th>
+                <th>Dates</th>
+                <th>Pages</th>
+                <th>Words</th>
+                <th>Colors</th>
+                <th>Names</th>
+                <th>Ideas</th>
+                <th>Count</th>
+                <th>TFIDF</th>
+            </tr>
+        </thead>
+</table></div>
+</body>
+</html>

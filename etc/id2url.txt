@@ -1,0 +1,34 @@
+From: Sebastian Rahtz <sebastian.rahtz@it.ox.ac.uk>
+Subject: Re: eebo [identifiers]
+Date: June 8, 2015 at 8:10:09 AM EDT
+To: Eric Lease Morgan <emorgan@ND.EDU>
+Cc: "TEI-L@LISTSERV.BROWN.EDU" <TEI-L@LISTSERV.BROWN.EDU>
+
+
+On 8 Jun 2015, at 12:56, Eric Lease Morgan <emorgan@nd.edu> wrote:
+
+> The CVS file available from GitHub is very much like the one I
+> created, and I have a question about the identifiers it contains.
+> More specifically, is it possible to embed any of those
+> identifiers (TCP, EEBO, VID, STC) into an actionable URL and get
+> something meaningful back. Do they point to various incarnations
+> of the texts? 
+
+given the EEBO ID A28024, you can get to:
+
+  * https://github.com/textcreationpartnership/A28024/,
+  * http://tei.it.ox.ac.uk/tcp/Texts-HTML/free/A28/A28024.html and
+  * http://tei.it.ox.ac.uk/tcp/Texts-EPUB/free/A28/A28024.epub
+
+i hope the algorithm is clear?
+
+--
+Sebastian Rahtz      
+Chief Data Architect
+University of Oxford IT Services
++44 1865 283431
+
+
+
+
+

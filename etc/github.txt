@@ -1,0 +1,25 @@
+From: Sebastian Rahtz <sebastian.rahtz@it.ox.ac.uk>
+Subject: Re: eebo [coolness!]
+Date: June 6, 2015 at 1:26:24 PM EDT
+To: Eric Lease Morgan <emorgan@ND.EDU>
+Cc: "TEI-L@LISTSERV.BROWN.EDU" <TEI-L@LISTSERV.BROWN.EDU>
+
+There are two shell scripts at
+
+  https://github.com/textcreationpartnership/Texts
+
+graball.sh and cloneall.sh. The first just hoovers up the XML files, the
+second clones each repository from Github.
+
+I would recommend keeping up with changes “”properly” by using Git, if
+you’re a resupplier, as then you’ll get corrections. For example, a few
+days ago I changed all the ECCO files so that the page image pointers go
+to Jisc Historical Books, not Chadwick-Healey (well, you see, C-H dont
+have those images……)
+
+My colleagues in the Bodleian (not “Boolean”, mr apple autocorrect)
+Libraries make the collection available with a DOI of
+10.5287/bodleian:s4655j198
+
+Anyone who wants the dark EEBO (phase 2) collection as  TEI P5 in the
+same format will have to contact me offline.
