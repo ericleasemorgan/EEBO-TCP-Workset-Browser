@@ -5,6 +5,7 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # June 11, 2015 - first investigations; based on work from HathiTrust
 # June 13, 2015 - added links to tei, html, and re-configured plain text
+# June 20, 2015 - made links to items of interest relative
 
 
 # configure
@@ -12,6 +13,9 @@ ABOUT    = '/about.db'
 CATALOG  = '/catalog.db'
 SEARCH   = './search.cgi?q='
 TEMPLATE = './etc/template-about.txt'
+XML      = './xml/'
+HTML     = './html/'
+TEXT     = './text/'
 
 # require
 import sys
@@ -116,72 +120,72 @@ with open ( corpus + CATALOG ) as database :
 
 # create the links of interest; shortest
 title        = catalog[ metadata[ 'WORKSHORTEST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'WORKSHORTEST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'WORKSHORTEST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'WORKSHORTEST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'WORKSHORTEST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'WORKSHORTEST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'WORKSHORTEST' ] + '.txt">plain text</a>'
 workshortest = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # longest
 title        = catalog[ metadata[ 'WORKLONGEST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'WORKLONGEST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'WORKLONGEST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'WORKLONGEST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'WORKLONGEST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'WORKLONGEST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'WORKLONGEST' ] + '.txt">plain text</a>'
 worklongest = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # oldest
 title        = catalog[ metadata[ 'WORKOLDEST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'WORKOLDEST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'WORKOLDEST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'WORKOLDEST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'WORKOLDEST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'WORKOLDEST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'WORKOLDEST' ] + '.txt">plain text</a>'
 workoldest = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # newest
 title        = catalog[ metadata[ 'WORKNEWEST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'WORKNEWEST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'WORKNEWEST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'WORKNEWEST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'WORKNEWEST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'WORKNEWEST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'WORKNEWEST' ] + '.txt">plain text</a>'
 worknewest = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # most ideas
 title        = catalog[ metadata[ 'IDEASMOST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'IDEASMOST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'IDEASMOST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'IDEASMOST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'IDEASMOST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'IDEASMOST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'IDEASMOST' ] + '.txt">plain text</a>'
 ideasmost = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # least ideas
 title        = catalog[ metadata[ 'IDEASLEAST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'IDEASLEAST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'IDEASLEAST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'IDEASLEAST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'IDEASLEAST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'IDEASLEAST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'IDEASLEAST' ] + '.txt">plain text</a>'
 ideasleast = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # most names
 title        = catalog[ metadata[ 'NAMESMOST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'NAMESMOST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'NAMESMOST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'NAMESMOST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'NAMESMOST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'NAMESMOST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'NAMESMOST' ] + '.txt">plain text</a>'
 namesmost = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # least names
 title        = catalog[ metadata[ 'NAMESLEAST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'NAMESLEAST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'NAMESLEAST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'NAMESLEAST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'NAMESLEAST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'NAMESLEAST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'NAMESLEAST' ] + '.txt">plain text</a>'
 namesleast = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # most colors
 title        = catalog[ metadata[ 'COLORSMOST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'COLORSMOST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'COLORSMOST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'COLORSMOST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'COLORSMOST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'COLORSMOST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'COLORSMOST' ] + '.txt">plain text</a>'
 colorsmost = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # least colors
 title        = catalog[ metadata[ 'COLORSLEAST' ] ][ 'title' ]
-tei          = '<a href="' + catalog[ metadata[ 'COLORSLEAST' ] ][ 'tei' ] + '">TEI</a>'
-html         = '<a href="' + catalog[ metadata[ 'COLORSLEAST' ] ][ 'html' ] + '">HTML</a>'
-plaintext    = '<a href="' + catalog[ metadata[ 'COLORSLEAST' ] ][ 'text' ] + '">plain text</a>'
+tei          = '<a href="' + XML  + metadata[ 'COLORSLEAST' ] + '.xml">TEI</a>'
+html         = '<a href="' + HTML + metadata[ 'COLORSLEAST' ] + '.html">HTML</a>'
+plaintext    = '<a href="' + TEXT + metadata[ 'COLORSLEAST' ] + '.txt">plain text</a>'
 colorsleast = title + ' (' + tei + ' : ' + html + ' : ' + plaintext + ')'
 
 # do some math; add more "kewl" calculations here
