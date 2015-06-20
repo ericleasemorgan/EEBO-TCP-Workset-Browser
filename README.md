@@ -10,7 +10,7 @@ The Browser is designed to work on Linux and Macintosh computers with Python and
 
 Here's a set of quick start instructions. Download the software and uncompress it, if necessary. Second, open your terminal and change directories to the distribution. Third, create a collection with the following command:
 
->`cat ./etc/catalog-lute.txt | ./make-everything.sh lute`
+>`cat ./etc/catalog-lute.txt | ./bin/make-everything.sh lute`
 
 If Bash, Python, wget, and libxml2 are installed, then the command will create a directory named lute, mirror bunches o' XML/TEI files, index them, create a "catalog" of them, do the rudimentary analysis, and generate data for further analysis. Of special interest is the file named `lute/catalog.db`. Import this file into your favorite spreadsheet or database program to search, sort, and browse characteristics of the collection. The next report of special interest is `lute/about.html`. It provides an overall narrative describing the collection.
 
