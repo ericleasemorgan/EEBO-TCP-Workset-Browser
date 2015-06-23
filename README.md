@@ -48,27 +48,27 @@ You can now create a collection with a single command:
 
 ## Creating your own collections
 
-Creating your own collections is a matter of creating a set of EEBO-TCP identifiers and feeding them to `./bin/make-everything.sh`. As of this writing, there is a complete collection of EEBO-TCP identifiers and their associated pieces of metadata found in the `eebo` directory. Change to the `eebo` directory and try some of the following commands to get feel for how the word lute is used in the entire corpus's metadata:
+Creating your own collections is a matter of creating a set of EEBO-TCP identifiers and feeding them to `./bin/make-everything.sh`. As of this writing, there is a complete collection of EEBO-TCP identifiers and their associated pieces of metadata found in the the file named `eebo.db`. For example, try some of the following commands to get feel for how the word lute is used in the entire corpus's metadata:
 
->`./bin/search.sh lute`
+>`./bin/eebo-search.sh lute`
 
->`./bin/search.sh lute facets`
+>`./bin/eebo-search.sh lute facets`
 
->`./bin/search.sh lute facets | less`
+>`./bin/eebo-search.sh lute facets | less`
 
-> `./bin/search.sh lute facets | ./bin/results2text.py`
+> `./bin/eebo-search.sh lute facets | ./bin/eebo-results2text.py`
 
-> `./bin/search.sh lute facets | ./bin/results2text.py | less`
+> `./bin/eebo-search.sh lute facets | ./bin/eebo-results2text.py | less`
 
-> `./bin/search.sh lute facets | ./bin/results2html.py lute | less`
+> `./bin/eebo-search.sh lute facets | ./bin/eebo-results2html.py lute | less`
 
-> `./bin/search.sh lute facets | ./bin/results2html.py lute > lute.html`
+> `./bin/eebo-search.sh lute facets | ./bin/eebo-results2html.py lute > lute.html`
 
-> `./bin/search.sh lute facets > ./lute.db; cd ..; cat ./eebo/lute.db | ./bin/make-everything.sh new-lute`
+> `./bin/eebo-search.sh lute facets | ./bin/make-everything.sh new-lute`
 
-Please be forewarned because `./bin/search.sh` can only search for single words. Phrase searching is not supported.
+Please be forewarned because `./bin/eebo-search.sh` can only search for single words. Phrase searching is not supported.
 
-Power-readers will want to peruse the indexes found in `./eebo/etc/index-*.idx`. Search, sort, and browse these files using your favorite spreadsheet, database, or text editor application. Believe me, the results will be eye-opening!
+Power-readers will want to peruse the indexes found in `./etc/eebo-index-*.idx`. Search, sort, and browse these files using your favorite spreadsheet, database, or text editor application. Power-readers will also want to import `eebo.db` into the same applications. Believe me, the results will be eye-opening!
 
 ## Links
 
@@ -80,6 +80,9 @@ Power-readers will want to peruse the indexes found in `./eebo/etc/index-*.idx`.
 
 ## Author
 Eric Lease Morgan <[emorgan@nd.edu](emorgan@nd.edu)>
+
+June 23, 2015
+
 
 
 

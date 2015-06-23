@@ -1,0 +1,37 @@
+<html>
+<!-- template-search.txt -->
+<head>
+<title>Search</title></head>
+<body style='margin: 5%'>
+
+<h1>Search</h1>
+
+<p>Use this form to search the corpus. The search engine only supports single-word queries against a limited number of indicies. Examples include: <a href="./search.cgi?q=art&i=titles&o=i">art identifiers in title words</a>, <a href="./search.cgi?q=science&i=facets&o=h">science HTML from facets</a>, <a href="./search.cgi?q=knowledge&i=titles&o=i">knowledge identifiers from title words</a>, and <a href="./search.cgi?q=love&i=titles&o=i">love identifiers from title words</a></p>
+
+<p>But really consider perusing/downloading the various indexes (<a href="./etc/eebo-index-authors.idx">authors</a>, <a href="./etc/eebo-index-dates.idx">dates</a>, <a href="./etc/eebo-index-facets.idx">facets</a>, <a href="./etc/eebo-index-languages.idx">languages</a>, <a href="./etc/eebo-index-publishers.idx">publisher words</a>, <a href="./etc/eebo-index-subjects.idx">subjects</a>, and <a href="./etc/eebo-index-titles.idx">title words</a>) into your favorite spreadsheet, database, or text editing application. Once imported into such an application, you will be able to search, sort, and browse the index to get a <em>much better</em> idea of what the collection includes and how it is described. Believe me, the process will be eye-opening!</p>
+
+<form method='GET' action='./search.cgi'>
+Search for <input type='text' name='q' /> in 
+<select name='i'>
+	<option value='facets'>facets</option>
+	<option value='titles'>title words</option>
+	<option value=''>key word</option>
+	<option value='subjects'>subjects</option>
+	<option value='authors'>authors</option>
+	<option value='dates'>dates</option>
+	<option value='languages'>languages</option>
+	<option value='publishers'>publisher words</option>
+</select> and return 
+<input type="radio" name="o" value="i" checked>identifiers</input>
+<input type="radio" name="o" value="h">HTML</input>
+<input type='submit' value='Go' />
+<input type='reset' value='Reset' />
+</form>
+
+<hr />
+<p style='text-align: right'>Eric Lease Morgan, Librarian<br />
+University of Notre Dame<br />
+<br />
+June 23, 2015</p>
+</body>
+</html>
