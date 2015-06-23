@@ -26,6 +26,9 @@ If you have R installed, then you can create quite a number of graphs literally 
 
 >`./bin/make-graphs.sh lute`
 
+
+## Extra credit
+
 If you have gotten this far, then create a collection of Shakespeare's works with the following commands:
 
 >`cat etc/catalog-shakespeare.txt | ./bin/make-everything.sh shakespeare`
